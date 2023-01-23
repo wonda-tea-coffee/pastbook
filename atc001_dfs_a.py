@@ -1,3 +1,6 @@
+# Pythonでのみ通る
+# PyPyだと通らないことに注意
+
 import sys
 sys.setrecursionlimit(1000000)
 
