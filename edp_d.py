@@ -15,8 +15,4 @@ for i in range(1, N):
         if j >= w[i]:
             dp[i][j] = max(dp[i][j], dp[i - 1][j - w[i]] + v[i])
 
-ans = 0
-for i in range(W + 1):
-    ans = max(ans, dp[N - 1][i])
-
-print(ans)
+print(max(dp[N - 1]))
