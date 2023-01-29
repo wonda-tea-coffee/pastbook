@@ -10,6 +10,7 @@ for i in range(M):
 Q = []
 heapq.heappush(Q, (0, 0))
 dist[0] = 0
+done = [False] * N
 
 while len(Q) > 0:
     d, v = heapq.heappop(Q)
@@ -17,6 +18,11 @@ while len(Q) > 0:
     if v == N-1:
         print(d)
         break
+
+    if done[v]:
+        continue
+
+    done[v] = True
 
     for nv, c in G[v]:
         if dist[nv] == -1 or dist[nv] > d+c:
